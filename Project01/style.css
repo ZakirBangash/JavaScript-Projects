@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body{
     background: #ECE9E6;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
@@ -13,4 +17,97 @@ body{
     justify-content: center;
     min-height: 100vh;
     margin: 0;
+}
+
+.container {
+    background-color: white;
+    border-radius: 5px;
+    width: 450px;   
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom:20px;
+    
+
+
+}
+
+.form-control label {
+    color: gray;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding:10px;
+    font-size: 14px;
+}
+.form-control input:focus{
+    outline: none;
+    border-color: gray;
+}
+
+.form-control.success input {
+    border-color:limegreen;
+}
+
+.form-control.error input  {
+    border-color: orangered;
+}
+
+.form-control small {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: orangered;
+    visibility: hidden;
+    
+}
+.form-control.error small {
+    visibility: visible;
+}
+
+.form button {
+    color: white;
+    background-color: rgb(63, 63, 212);
+    width: 100%;
+    padding:10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    border: 2px solid lightgray;
+    margin-top: 10px;
+    
+}
+
+button.home{
+    background-color: lightgray;
+    border: 2px solid lightgray;
+    color:white;
+    padding: 10px;
+    font-size: 19px;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+}
+a {
+    text-decoration: none;
 }
