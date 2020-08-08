@@ -1,2 +1,2 @@
 # JavaScript Projects
- Some Projects to Demonstrate Vanila JavaScript
+ This repository will contain 20 JavaScript projects developed with HTML, CSS and JavaScripts
