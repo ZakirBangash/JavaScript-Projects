@@ -5,14 +5,19 @@ const password = document.getElementById('password');
 const confirm = document.getElementById('confirm');
 
 
+//  A generic function to show error
+function showError(input,message) {
+    const formControl = input.parentNode;
+    formControl.classList.add('error');
+    input.nextElementSibling.innerText = `${getField(input.id)}`+`${message}`;    
+}
 
 
 function checkRequired(input) {
     input.forEach(input => {
         const formControl = input.parentNode;
         if (input.value === '') {
-            formControl.classList.add('error');
-            input.nextElementSibling.innerText = `${getField(input.id)} is required`
+            showError(input,' is required')
         } else {
             formControl.classList.add('success');
         }
@@ -28,19 +33,33 @@ function isValidEmail(email) {
     return re.test(String(email).toLowerCase());    
 }
 
+function checkLength(input,min,max) {
+  console.log(min)
+    if(input.value !== '')
+    if(input.value.length < min)
+        showError(input,` should be greater than ${min}`)
+    else if (input.value.length > max)
+    showError(input,` should be less than ${max}`)
+}
+function checkConfirmation(p1,p2) {
+    if(p1.value !== '' && p2.value !== '')
+    if(p1.value !== p2.value)
+    showError(p2,` Password not matched`)
+}
+
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     checkRequired([username, email, password, confirm]);
+    checkLength(username,3,10);
+    checkLength(password,3,10);
+     checkLength(confirm,3,10);
+    checkConfirmation(password,confirm);
+    if(!isValidEmail(email.value))
+          if(email.value !== '')
+            showError(email,' is invalid');
 
-    if(!isValidEmail(email.value)){
-        const formControl = email.parentNode;
-        formControl.classList.add('error');
-        email.nextElementSibling.innerText='Email is invalid';
-        console.log('invalid')
-    }
-    
-    
-   
+            
 })
 
 
