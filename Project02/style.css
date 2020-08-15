@@ -6,7 +6,10 @@
 }
 
 body {
-        background-color: rgb(104, 137, 170);
+        background-image: url('./cinema2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* background-color: rgb(104, 137, 170); */
         margin: 0;
         display: flex;
         flex-direction: column;
@@ -19,15 +22,26 @@ body {
 
 .movie-container {
     margin: 20px 0;
+    
+}
+
+.movie-container  label{
+    margin-left: -34px;
+    font-size: 30px;
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+    
 }
 
 .movie-container select {
     border: none;
     border-radius: 5px;
     padding:5px 0;
-    padding: 5px 15px;
-    margin-left: 15px;
+    padding: 10px 45px;
     background-color: white;
+    display: block;
+    
 }
 
 .seat {
@@ -106,3 +120,4 @@ body {
     transform: rotateX(-50deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
+
