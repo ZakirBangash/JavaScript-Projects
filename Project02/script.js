@@ -21,7 +21,7 @@ var TxtRotate = function(el, toRotate, period) {
     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
   
     var that = this;
-    var delta = 300 - Math.random() * 100;
+    var delta = 0 - Math.random() * 0;
   
     if (this.isDeleting) { delta /= 2; }
   
@@ -55,3 +55,61 @@ var TxtRotate = function(el, toRotate, period) {
     document.body.appendChild(css);
   };
   
+
+
+
+
+
+
+
+const container = document.querySelector(".container:not(.occupied");
+const seats = document.querySelectorAll('.row .seat:not(.occupied)')
+const select = document.querySelector("#movie");
+const count = document.querySelector("#count");
+const total = document.querySelector("#total");
+let value = +select.value;
+console.log(typeof value)
+
+function updateSelectCount() {
+    const selectedSeats = document.querySelectorAll('.row .seat.selected');
+    const countedSeats = selectedSeats.length;    
+    count.innerText = `${countedSeats}`;
+    total.innerText = value * countedSeats
+}
+
+
+select.addEventListener('change',e =>{
+  console.log(e.target.value)
+     value =+e.target.value;
+})
+
+
+container.addEventListener('click', e => {
+   if(e.target.classList.contains('seat') && !e.target.classList.contains('occupied')){
+          e.target.classList.toggle('selected')
+          updateSelectCount();
+          
+   }
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
