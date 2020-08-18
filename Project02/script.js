@@ -61,17 +61,23 @@ var TxtRotate = function(el, toRotate, period) {
 
 
 
-
 const container = document.querySelector(".container:not(.occupied");
 const seats = document.querySelectorAll('.row .seat:not(.occupied)')
 const select = document.querySelector("#movie");
 const count = document.querySelector("#count");
 const total = document.querySelector("#total");
 let value = +select.value;
-console.log(typeof value)
+
+
+
+
 
 function updateSelectCount() {
     const selectedSeats = document.querySelectorAll('.row .seat.selected');
+    console.log(selectedSeats);
+    const seatsIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
+    
+
     const countedSeats = selectedSeats.length;    
     count.innerText = `${countedSeats}`;
     total.innerText = value * countedSeats
@@ -79,8 +85,9 @@ function updateSelectCount() {
 
 
 select.addEventListener('change',e =>{
-  console.log(e.target.value)
-     value =+e.target.value;
+      value =+e.target.value;
+     console.log(e.target.selectedIndex);
+     
 })
 
 
