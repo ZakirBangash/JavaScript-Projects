@@ -1,122 +1,88 @@
-var TxtRotate = function(el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
-  };
-  
-  TxtRotate.prototype.tick = function() {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
-  
-    if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-  
-    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-  
-    var that = this;
-    var delta = 0 - Math.random() * 0;
-  
-    if (this.isDeleting) { delta /= 2; }
-  
-    if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 500;
-    }
-  
-    setTimeout(function() {
-      that.tick();
-    }, delta);
-  };
-  
-  window.onload = function() {
-    var elements = document.getElementsByClassName('txt-rotate');
-    for (var i=0; i<elements.length; i++) {
-      var toRotate = elements[i].getAttribute('data-rotate');
-      var period = elements[i].getAttribute('data-period');
-      if (toRotate) {
-        new TxtRotate(elements[i], JSON.parse(toRotate), period);
-      }
-    }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-    document.body.appendChild(css);
-  };
-  
-
-
-
-
-
-
 const container = document.querySelector(".container:not(.occupied");
-const seats = document.querySelectorAll('.row .seat:not(.occupied)')
+const seats = document.querySelectorAll(".row .seat:not(.occupied)");
 const select = document.querySelector("#movie");
 const count = document.querySelector("#count");
 const total = document.querySelector("#total");
+const screen = document.querySelector(".screen");
 let value = +select.value;
 
 
+function embedYoutubeVedio(selectedIndex) {
+  console.log(selectedIndex);
+  let Src = "";
+  if (selectedIndex == 0) {
+    Src = "https://www.youtube.com/embed/qSqVVswa420";
+  } else if (selectedIndex == 4) {
+    Src = "https://www.youtube.com/embed/NSlUevhlmv0";
+  }else if (selectedIndex == 1) {
+    Src="https://www.youtube.com/embed/BIhNsAtPbPI";
+  }else if (selectedIndex == 2) {
+    Src="https://www.youtube.com/embed/7TavVZMewpY";
+  }else if (selectedIndex == 3) {
+    Src="https://www.youtube.com/embed/wb49-oV0F78"
+  }
 
+  screen.innerHTML = `<iframe
+      width="300"
+      height="100"
+      src=${Src}
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe> `;
 
-
-function updateSelectCount() {
-    const selectedSeats = document.querySelectorAll('.row .seat.selected');
-    console.log(selectedSeats);
-    const seatsIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
-    
-
-    const countedSeats = selectedSeats.length;    
-    count.innerText = `${countedSeats}`;
-    total.innerText = value * countedSeats
 }
 
+populateUI();
+embedYoutubeVedio(select.selectedIndex);
+function populateUI() {
+  const seatindex = JSON.parse(localStorage.getItem("seatindex"));
+  if (seatindex != null) {
+    [...seats].map((seats, index) => {
+      if (seatindex.indexOf(index) > -1) {
+        seats.classList.add("selected");
+      }
+    });
+  }
 
-select.addEventListener('change',e =>{
-      value =+e.target.value;
-     console.log(e.target.selectedIndex);
-     
-})
+  const movieIndex = localStorage.getItem("MovieIndex");
+  if (movieIndex !== null) {
+    select.selectedIndex = movieIndex;
+  }
+  
+}
 
+function setMovieIndex(movieIndex, moviePrice) {
+  localStorage.setItem("MovieIndex", movieIndex);
+  localStorage.setItem('selectedMoviePrice',moviePrice);
+}
 
-container.addEventListener('click', e => {
-   if(e.target.classList.contains('seat') && !e.target.classList.contains('occupied')){
-          e.target.classList.toggle('selected')
-          updateSelectCount();
-          
-   }
-    
-})
+function updateSelectCount() {
+  const selectedSeats = document.querySelectorAll(".row .seat.selected");
+  const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
+  localStorage.setItem("seatindex", JSON.stringify(seatsIndex));
 
+  const countedSeats = selectedSeats.length;
+  count.innerText = `${countedSeats}`;
+  total.innerText = value * countedSeats;
+}
 
+select.addEventListener("change", (e) => {
+  value = +e.target.value;
+    console.log(value)
+    updateSelectCount();
+  setMovieIndex(e.target.selectedIndex, e.target.value);
+  embedYoutubeVedio(e.target.selectedIndex);
+});
 
+container.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("seat") &&
+    !e.target.classList.contains("occupied")
+  ) {
+    e.target.classList.toggle("selected");
+    updateSelectCount();
+  }
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+updateSelectCount();
