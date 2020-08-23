@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/Style.css" />
+    <link rel="stylesheet" href="CSS/Progress.css"">
+    <title>Vedio Player</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Vedio Player</h1>
+      <video
+        src="Assets/Vedios/Week 8-IDS Lab-Part 1.m4v "
+        poster="Assets/Images/poster.png"
+        class="screen"
+        
+      ></video>
+    <div class="controls">
+        <button class="btn" id="play">
+            <i class="fas fa-play fa-2x"></i>
+        </button>
+        <button class="btn" id="stop">
+            <i class="fas fa-stop fa-2x"></i>
+        </button>
+        <input type="range" id="progress" class="progress" min="0" max="100" value="0">
+        <span id="timestamp" class="timestamp">00:00</span>
+    </div>
+
+    </div>
+
+    <script src="Style.js"></script>
+    <script src="https://kit.fontawesome.com/c2d8e7c00b.js" crossorigin="anonymous"></script>
+  </body>
+</html>
