@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="./img/trans.png" alt="money icon" class="money-img">
+    <h1>Currency Exchange</h1>
+    <p>Please choose your Currency, the amount of the Currency to convert,and target Currency</p>
+    <div class="container">
+        <div class="flip-container">
+            <button class="btn">Flip</button>
+            <div class="rate"></div>
+        </div>
+
+        <div class="currency">
+            <select>
+                <option value='AED'>AED - United Arab Emirates</option>
+                <option value='ARS'>ARS - United Arab Emirates</option>
+                <option value='AUD'>AUD - United Arab Emirates</option>
+                <option value='BGN'>BGN - United Arab Emirates</option>
+                <option value='BRL'>BRL - United Arab Emirates</option>
+                <option value='BSD'>BSD - United Arab Emirates</option>
+                <option value='CAD'>CAD - United Arab Emirates</option>
+                <option value='CHF'>CHF - United Arab Emirates</option>
+                <option value='CLP'>CLP - United Arab Emirates</option>
+                <option value='CNY'>CNY - United Arab Emirates</option>
+                <option value='COP'>COP - United Arab Emirates</option>
+                <option value='CZK'>CZK - United Arab Emirates</option>
+                <option value='DKK'>DKK - United Arab Emirates</option>
+                <option value='DOP'>DOP - United Arab Emirates</option>
+                <option value='EGP'>EGP - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='FJD'>FJD - United Arab Emirates</option>
+                <option value='GBP'>GBP - United Arab Emirates</option>
+                <option value='GTQ'>GTQ - United Arab Emirates</option>
+                <option value='HKD'>HKD - United Arab Emirates</option>
+                <option value='HRK'>HRK - United Arab Emirates</option>
+                <option value='HUF'>HUF - United Arab Emirates</option>
+                <option value='IDR'>IDR - United Arab Emirates</option>
+                <option value='ILS'>ILS - United Arab Emirates</option>
+                <option value='INR'>INR - United Arab Emirates</option>
+                <option value='ISK'>ISK - United Arab Emirates</option>
+                <option value='JPY'>JPY - United Arab Emirates</option>
+                <option value='KRW'>KRW - United Arab Emirates</option>
+                <option value='KZT'>KZT - United Arab Emirates</option>
+                <option value='MVR'>MVR - United Arab Emirates</option>
+                <option value='MXN'>MXN - United Arab Emirates</option>
+                <option value='MYR'>MYR - United Arab Emirates</option>
+                <option value='NOK'>NOK - United Arab Emirates</option>
+                <option value='NZD'>NZD - United Arab Emirates</option>
+                <option value='PAB'>PAB - United Arab Emirates</option>
+                <option value='PEN'>PEN - United Arab Emirates</option>
+                <option value='PHP'>PHP - United Arab Emirates</option>
+                <option value='PKR'>PKR - United Arab Emirates</option>
+                <option value='PLN'>PLN - United Arab Emirates</option>
+                <option value='PYG'>PYG - United Arab Emirates</option>
+                <option value='RON'>RON - United Arab Emirates</option>
+                <option value='RUB'>RUB - United Arab Emirates</option>
+                <option value='SAR'>SAR - United Arab Emirates</option>
+                <option value='SEK'>SEK - United Arab Emirates</option>
+                <option value='SGD'>SGD - United Arab Emirates</option>
+                <option value='THB'>THB - United Arab Emirates</option>
+                <option value='TRY'>TRY - United Arab Emirates</option>
+                <option value='TWD'>TWD - United Arab Emirates</option>
+                <option value='UAH'>UAH - United Arab Emirates</option>
+                <option value='USD'>USD - United Arab Emirates</option>
+                <option value='UYU'>UYU - United Arab Emirates</option>
+                <option value='ZAR'>ZAR - United Arab Emirates</option>
+            </select>
+            <input type="number" placeholder="0" value="1" id="amount-one">
+        </div>
+
+        <div class="currency">
+            <select>
+                <option value='AED'>AED - United Arab Emirates</option>
+                <option value='ARS'>ARS - United Arab Emirates</option>
+                <option value='AUD'>AUD - United Arab Emirates</option>
+                <option value='BGN'>BGN - United Arab Emirates</option>
+                <option value='BRL'>BRL - United Arab Emirates</option>
+                <option value='BSD'>BSD - United Arab Emirates</option>
+                <option value='CAD'>CAD - United Arab Emirates</option>
+                <option value='CHF'>CHF - United Arab Emirates</option>
+                <option value='CLP'>CLP - United Arab Emirates</option>
+                <option value='CNY'>CNY - United Arab Emirates</option>
+                <option value='COP'>COP - United Arab Emirates</option>
+                <option value='CZK'>CZK - United Arab Emirates</option>
+                <option value='DKK'>DKK - United Arab Emirates</option>
+                <option value='DOP'>DOP - United Arab Emirates</option>
+                <option value='EGP'>EGP - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='EUR'>EUR - United Arab Emirates</option>
+                <option value='FJD'>FJD - United Arab Emirates</option>
+                <option value='GBP'>GBP - United Arab Emirates</option>
+                <option value='GTQ'>GTQ - United Arab Emirates</option>
+                <option value='HKD'>HKD - United Arab Emirates</option>
+                <option value='HRK'>HRK - United Arab Emirates</option>
+                <option value='HUF'>HUF - United Arab Emirates</option>
+                <option value='IDR'>IDR - United Arab Emirates</option>
+                <option value='ILS'>ILS - United Arab Emirates</option>
+                <option value='INR'>INR - United Arab Emirates</option>
+                <option value='ISK'>ISK - United Arab Emirates</option>
+                <option value='JPY'>JPY - United Arab Emirates</option>
+                <option value='KRW'>KRW - United Arab Emirates</option>
+                <option value='KZT'>KZT - United Arab Emirates</option>
+                <option value='MVR'>MVR - United Arab Emirates</option>
+                <option value='MXN'>MXN - United Arab Emirates</option>
+                <option value='MYR'>MYR - United Arab Emirates</option>
+                <option value='NOK'>NOK - United Arab Emirates</option>
+                <option value='NZD'>NZD - United Arab Emirates</option>
+                <option value='PAB'>PAB - United Arab Emirates</option>
+                <option value='PEN'>PEN - United Arab Emirates</option>
+                <option value='PHP'>PHP - United Arab Emirates</option>
+                <option value='PKR'>PKR - United Arab Emirates</option>
+                <option value='PLN'>PLN - United Arab Emirates</option>
+                <option value='PYG'>PYG - United Arab Emirates</option>
+                <option value='RON'>RON - United Arab Emirates</option>
+                <option value='RUB'>RUB - United Arab Emirates</option>
+                <option value='SAR'>SAR - United Arab Emirates</option>
+                <option value='SEK'>SEK - United Arab Emirates</option>
+                <option value='SGD'>SGD - United Arab Emirates</option>
+                <option value='THB'>THB - United Arab Emirates</option>
+                <option value='TRY'>TRY - United Arab Emirates</option>
+                <option value='TWD'>TWD - United Arab Emirates</option>
+                <option value='UAH'>UAH - United Arab Emirates</option>
+                <option value='USD'>USD - United Arab Emirates</option>
+                <option value='UYU'>UYU - United Arab Emirates</option>
+                <option value='ZAR'>ZAR - United Arab Emirates</option>
+            </select>
+            <input type="number" placeholder="0" value="1" id="amount-two">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
