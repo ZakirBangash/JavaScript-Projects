@@ -14,12 +14,12 @@
     <p>Please choose your Currency, the amount of the Currency to convert,and target Currency</p>
     <div class="container">
         <div class="flip-container">
-            <button class="btn">Flip</button>
-            <div class="rate">386298</div>
+            <button id="flip"class="btn">Flip</button>
+            <div id="rate" class="rate">386298</div>
         </div>
 
         <div class="currency">
-            <select>
+            <select id="currency-one">
                 <option value='AED'>AED - United Arab Emirates</option>
                 <option value='ARS'>ARS - Argentina</option>
                 <option value='AUD'>AUD - Australia</option>
@@ -91,11 +91,12 @@
                 <option value='UYU'>UYU - Uruguay</option>
                 <option value='ZAR'>ZAR - South Africa</option>
             </select>
-            <input type="number" placeholder="0" value="1" id="amount-one">
+            <input type="number" min="0" placeholder="0" value="1" id="amount-one">
         </div>
 
         <div class="currency">
-            <select>
+            <select id="currency-two">
+                <option value='PKR'>PKR - Pakistan</option>
                 <option value='AED'>AED - United Arab Emirates</option>
                 <option value='ARS'>ARS - Argentina</option>
                 <option value='AUD'>AUD - Australia</option>
@@ -151,7 +152,7 @@
                 <option value='PAB'>PAB - Panama</option>
                 <option value='PEN'>PEN - Peru</option>
                 <option value='PHP'>PHP - Philippines</option>
-                <option value='PKR'>PKR - Pakistan</option>
+                
                 <option value='PLN'>PLN - Poland</option>
                 <option value='PYG'>PYG - Paraguay</option>
                 <option value='RON'>RON - Romania</option>
@@ -167,11 +168,11 @@
                 <option value='UYU'>UYU - Uruguay</option>
                 <option value='ZAR'>ZAR - South Africa</option>
             </select>
-            <input type="number" placeholder="0" value="1" id="amount-two">
+            <input type="number" placeholder="0" min="0" value="1" id="amount-two">
         </div>
 
     </div>
-
+<script src="script.js"></script>
 </body>
 
 </html>
