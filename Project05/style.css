@@ -52,3 +52,11 @@ h2 {
   justify-content: space-between;
   margin: 20px 0 0 0;
 }
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  margin:5px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
