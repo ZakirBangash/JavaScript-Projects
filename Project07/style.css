@@ -1,4 +1,4 @@
-/* * {
+* {
     box-sizing: border-box;
 }
 
@@ -15,17 +15,6 @@ body {
 
 h1 {
     margin: 20px 0 0;
-}
-
-.figure-container {
-    stroke: white;
-    stroke-width: 4px;
-    stroke-linecap: round;
-    fill: transparent;
-}
-
-.hangman-part {
-    display: none;
 }
 
 .game-container {
@@ -45,17 +34,22 @@ h1 {
     text-align: right;
 }
 
+.wrong-letters p {
+    margin: 0 0 5px;
+}
+
 .wrong-letters span {
     font-size: 24px;
 }
 
- .word {
+.word {
     display: flex;
-     position: absolute;
+    position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
 }
+
 .letter {
     border-bottom: 3px solid skyblue;
     display: inline-flex;
@@ -67,6 +61,17 @@ h1 {
     height: 50px;
 }
 
+.figure-container {
+    stroke: white;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    fill: transparent;
+}
+
+.hangman-part {
+    display: none;
+}
+
 .popup-container {
     background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
@@ -76,7 +81,7 @@ h1 {
     right: 0;
     align-items: center;
     justify-content: center;
-    
+    display: flex;
 }
 
 .popup {
@@ -108,7 +113,6 @@ h1 {
     transform: scale(0.95);
 }
 
-
 .slider-container {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px 10px 0 0;
@@ -127,21 +131,7 @@ h1 {
 }
 
 
-
-/*
-.letter {
-    border-bottom: 3px solid skyblue;
-    display: inline-flex;
-    font-size: 36px;
-    align-items: center;
-    justify-content: center;
-    margin: 0 3px;
-    width: 20px;
-    height: 50px;
-} */ */
-
-
-*{
+/* * {
     box-sizing: border-box;
 }
 
@@ -152,7 +142,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 80vh;
     margin: 0;
 }
@@ -168,18 +157,12 @@ h1 {
     fill: transparent;
 }
 
-/* .game-container {
-    padding: 20px 30px;
-    position: relative;
-    margin: auto;
-    width: 450px;
-    height: 350px;
-} */
+
 
 .game-container { 
-    padding:20px 40px;
+    padding:20px 30px;
     position: relative;
-    
+    margin: auto;
     width: 450px;
     height: 350px;
     
@@ -190,11 +173,18 @@ h1 {
     top:20px;
     right:20px;
     text-align: right;
+    display: flex;
+    flex-direction: column;
+
 }
 
-/* .wrong-letters p {
+ .wrong-letters p {
     margin: 0 0 5px 0;
-} */
+} 
+
+.wrong-letters span {
+    font-size: 24px;
+}
 
 .word {
     display: flex;
@@ -215,3 +205,49 @@ h1 {
     justify-content: center;
 }
 
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.hangman-part {
+    display: none;
+}
+
+.popup {
+    background-color: skyblue;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+}
+
+.popup h2 {
+    color: black;
+}
+
+.popup button {
+    cursor: pointer;
+    background-color: white;
+    border: 0;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.popup button:focus {
+    outline: 0;
+}
+
+.popup button:active {
+    transform: scale(0.95);
+}
+
+ */
