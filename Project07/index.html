@@ -58,30 +58,33 @@
             <line x1="140" y1="150" x2="120" y2="180" class="hangman-part" />
             <line x1="140" y1="150" x2="160" y2="180" class="hangman-part" />
         </svg>
-        <div class="wrong-letters">
-            <p>Wrong Guesses</p>
-            <span>z,k,o,w</span>
+
+        <div class="wrong-letters" id="wrong-letters">
+          
+            
+            
         </div>
 
-        <div class="word">
-            <div class="letter">h</div>
+        <div class="word" id="word">
+            <!-- <div class="letter">h</div>
             <div class="letter">e</div>
             <div class="letter">l</div>
             <div class="letter">l</div>
-            <div class="letter">o</div>
+            <div class="letter">o</div> -->
         </div>
         </div>
-        <div class="popup-container">
+
+        <div class="popup-container" id="popup-container">
           <div class="popup">
-              <h2>You Won</h2>
-              <button>Restart</button>
+              <h2 id="win-lose">You Won</h2> 
+              <button id="restart">Restart</button>
           </div>
         </div>
 
         <!-- Container for Sliding Notification: Repeat Letter Input -->
     <div class="slider-container" id="slider-container">
       <p>You have already entered this letter.</p>
-  </div>
+  </div>  
 
 
 
