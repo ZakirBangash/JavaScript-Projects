@@ -12,34 +12,34 @@
     <div class="container">
       <h4>Your Balance</h4>
       <h1 id="balance">$2498.00</h1>
+
       <div class="income_expense_container">
         <div>
           <h4>INCOME</h4>
-          <p class="money plus">+0.00 PKR</p>
+          <p class="money plus" id="money-plus">+0.00 PKR</p>
         </div>
 
         <div>
           <h4>EXPENSE</h4>
-          <p class="money minus">-0.00 PKR</p>
+          <p class="money minus" id="money-minus">-0.00 PKR</p>
         </div>
       </div>
 
       <h3>History</h3>
-      <ul class="list">
-        <li class="plus">
+      <ul class="list" id="list">
+        <!-- I commentted the below code because we will add transaction through javascript -->
+       
+        <!-- <li class="plus">
           Cash <span>$454</span>
           <button class="btn-delete">x</button>
-        </li>
+        </li> -->
 
-        <li class="minus">
-          Cash <span>$454</span>
-          <button class="btn-delete">x</button>
-        </li>
+      
       </ul>
 
       <!-- Form to add new transaction -->
       <h3>Add new Transaction</h3>
-      <form>
+      <form id="form">
         <div class="form_control">
           <label for="description"></label>
           <input type="text" id="description" placeholder="Enter Description" />
